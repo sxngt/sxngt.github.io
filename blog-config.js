@@ -1,7 +1,7 @@
 module.exports = {
   title: "ysh8614",
   description: "상티의 분노와 눈물이 가득한 기술블로그",
-  author: "Hudi",
+  author: "ysh8614",
   siteUrl: "https://ysh8614.github.io",
   links: {
     github: "https://github.com/ysh8614",
