@@ -4,7 +4,7 @@ module.exports = {
   author: "Hudi",
   siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
   links: {
-    github: "https://github.com/devHudi",
+    github: "https://github.com/ysh8614",
     linkedIn: "https://linkedin.com",
     facebook: "https://www.facebook.com",
     twitter: "https://twitter.com",
