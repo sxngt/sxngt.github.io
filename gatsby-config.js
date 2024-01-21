@@ -2,16 +2,23 @@ const blogConfig = require("./blog-config")
 const { title, description, author, siteUrl } = blogConfig
 
 module.exports = {
-  pathPrefix: "/gatsby-starter-hoodie",
+  pathPrefix: '/gatsby-starter-hoodie',
   siteMetadata: {
-    title,
-    description,
-    author,
-    siteUrl,
+    title: 'ysh8614.github.io',
+    description: '상티의 기술블로그',
+    author: 'Sanghyun Yun',
+    siteUrl: 'https://ysh8614.github.io',
   },
   plugins: [
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://ysh8614.github.io',
+        sitemap: 'https://ysh8614.github.io/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-react-redux`,
       options: {
