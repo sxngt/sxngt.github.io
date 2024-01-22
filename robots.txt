@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ysh8614.github.io/sitemap.xml
+Sitemap: https://ysh8614.github.io/sitemap-0.xml
 Host: https://ysh8614.github.io
