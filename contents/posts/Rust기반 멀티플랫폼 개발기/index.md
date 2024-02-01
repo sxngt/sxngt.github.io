@@ -17,7 +17,7 @@ series: "Rust 멀티플랫폼 개발"
 
 2023년 중반기 MITS 연구실에 AI 연구원으로 들어가게 되었는데 학슴컴퓨터 발주의 문제(2024 4월에 온단다), Java를 할 줄 안다고 괜히 말했던 필자의 입 문제 등등이 겹쳐 Android기반 초음파 신호처리 개발에 투입되게 되었다.
 
-![](ultrasound.jpg)<center>*내가 말한 Java는 분명 Spring을 떠올리고 한 말이였는데...*</center>
+![초음파이미지](ultrasound.jpg)<center>*내가 말한 Java는 분명 Spring을 떠올리고 한 말이였는데...*</center>
 
 
 아무튼 그렇게 시작하게 된 Android 신호처리 리팩토링. (짜잔) <br>
