@@ -15,7 +15,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://ysh8614.github.io',
-        sitemap: 'https://ysh8614.github.io/sitemap.xml',
+        sitemap: 'https://ysh8614.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
