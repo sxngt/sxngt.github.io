@@ -1,8 +1,8 @@
 module.exports = {
   title: "sxngt",
   description: "상티의 분노와 눈물이 가득한 기술블로그",
-  author: "ysh8614",
-  siteUrl: "https://ysh8614.github.io",
+  author: "sxngt",
+  siteUrl: "https://sxngt.github.io",
   links: {
     github: "https://github.com/sxngt",
     linkedIn: "https://www.linkedin.com/in/%EC%83%81%ED%98%84-%EC%9C%A4-539a65271/",
