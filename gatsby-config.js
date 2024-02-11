@@ -4,18 +4,18 @@ const { title, description, author, siteUrl } = blogConfig
 module.exports = {
   pathPrefix: '/main',
   siteMetadata: {
-    title: 'ysh8614.github.io',
+    title: 'sxngt.github.io',
     description: '상티의 기술블로그',
     author: 'Sanghyun Yun',
-    siteUrl: 'https://ysh8614.github.io',
+    siteUrl: 'https://sxngt.github.io',
   },
   plugins: [
     `gatsby-plugin-catch-links`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://ysh8614.github.io',
-        sitemap: 'https://ysh8614.github.io/sitemap-index.xml',
+        host: 'https://sxngt.github.io',
+        sitemap: 'https://sxngt.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
