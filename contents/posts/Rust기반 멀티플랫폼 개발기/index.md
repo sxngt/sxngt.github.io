@@ -117,3 +117,18 @@ class HelloWorld {
 
 
 CI/CD 인프라를 한번 맛본 사람이 직접 배포하는 환경에서 작업하는 것 만으로도 스트레스가 쌓이듯이 이런 가내수공업식 라이브러리 개발은 정말 지옥이였다.
+
+Rust는 wasm-bindgen 이라는 오픈소스에서 Rust의 멀티플랫폼 개발 가능성을 상당히 많이 신뢰받게 되었는데, Wasm과 Rust의 호환성 높은 상호 운용성에 더불어, bindgen 오픈소스의 강한 서포트로 약 몇가지의 세팅과 선언만으로 Rust Native하게 Wasm API를 개발할 수 있었다는 점에서 이 사실을 알게 된 이후로 필자는 bindgen을 만들거나, 다른 bindgen을 서칭하는 방안으로 방향을 잡았다.
+
+## uniffi
+![](https://mozilla.github.io/uniffi-rs/uniffi_diagram.png)
+
+뜬금없이 bindgen 이야기 하다가 왠 UniFFI이냐. 정확히는 uniffi-bindgen이라는걸 찾았고 그걸 사용하는 핵심 기반이 uniffi이기 때문이다.
+
+일단 uniffi는 Mozila재단에서 만든건데..(검색하면 다 나오는 내용 길게 안씁니다.) Mozlia의 Firefox 브라우저 로직 중 일부가 Rust로 작성되어있다. 그만큼 Rust를 활발하게 쓰는 집단이라 본인들의 개발 공수를 줄이기 위해 만들었다고 볼 수 있다.
+
+간단하게 그림만 보면 알 수 있듯이, Rust로 작성된 비즈니스 로직을 Scaffolding을 통하여 각 언어를 통한 바인딩으로 포팅할 수 있는데 scaffolding은 그냥 기본적인 Rust의 비계정도로 생각하면 된다.
+
+### 개꿀 빨았다
+
+자칫하면 JVM-bindgen을 만들고 앉아있어야 할 수도 있었던 나의 운명이 갓 Mozila의 오픈소스로 개발공수가 확 줄게 되었다. 자세한 개발기, 코드와 운영체제 관점에서 자세히 리뷰하는 것은 2부부터 시작하겠다.
