@@ -1,0 +1,575 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="download_date" content="2025-09-09T08:07:29.919Z"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --bg-color: #f4f4f4;
+  --dark-color: #333;
+  --light-color: #666;
+  --pri-dark-color: hsl(13, 80%, 12%);
+  --pri-light-color: hsl(40, 90%, 65%);
+}
+@font-face {
+  font-family: "notoSans";
+  src: url("undefined") format("truetype");
+  font-weight: normal;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--dark-color);
+  background: var(--bg-color);
+
+  word-break: keep-all;
+}
+
+body > p {
+  padding-bottom: 1rem;
+}
+
+.top {
+  margin: auto;
+  max-width: 55rem;
+  padding: 2em 1em;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.title {
+  display: block;
+  font-weight: 800;
+  font-size: 3.5rem;
+  width: fit-content;
+  line-height: 1;
+}
+
+.top div {
+  width: fit-content;
+  padding-inline: 0.25rem;
+}
+
+.top p {
+  font-size: 0.875rem;
+}
+
+h1 {
+  padding-block: 1em 0.5em;
+  width: fit-content;
+
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+h1::after {
+  content: "";
+  display: block;
+  margin-top: 0.25em;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--dark-color);
+}
+
+h2 {
+  padding-block: 1em;
+  width: fit-content;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h2::after {
+  content: "";
+  display: block;
+
+  margin-top: 0.25em;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--dark-color);
+}
+
+h2:first-of-type {
+  padding-top: 0;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  background-color: var(--bg-color);
+  z-index: 100;
+}
+
+nav {
+  margin-inline: auto;
+  max-width: 55rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+a:hover {
+  color: var(--light-color);
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--dark-color);
+}
+
+nav ul a {
+  flex-shrink: 0;
+  padding-inline: 1.25rem;
+  padding-block: 0.75rem;
+  font-weight: 400;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav ul a > a {
+  transition: color 0.2s ease-in-out;
+}
+
+nav ul a:hover {
+  background-color: var(--light-color);
+}
+
+nav ul a:hover {
+  color: white;
+}
+
+.active {
+  font-weight: 900;
+  background-color: var(--dark-color);
+}
+
+.active {
+  color: white;
+}
+
+main {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  max-width: 55rem;
+  min-height: 50vh;
+}
+
+section {
+  padding-inline: 0.5rem;
+}
+
+.image-list {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  
+}
+
+.image-list div {
+  border: #333 3px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.image-list img {
+  object-fit: cover;
+  width: 100%;
+  vertical-align: bottom;
+  height: 80px;
+}
+
+footer {
+  max-width: 55rem;
+  margin-inline: auto;
+  padding: 1rem;
+  border-top: var(--dark-color) solid 3px;
+  padding-block: 2rem;
+  margin-top: 4rem;
+  font-size: 1rem;
+}
+
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+}
+
+.grid-head {
+  font-weight: 800;
+  text-align: end;
+}
+
+.list li {
+  list-style-type: disc;
+  margin-inline: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1rem;
+  width: fit-content;
+  border-radius: 0.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  background-color: var(--bg-color);
+  color: var(--dark-color);
+  font-weight: bold;
+
+  border: 3px solid var(--dark-color);
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button:hover {
+  color: #eee;
+  background-color: var(--dark-color);
+}
+
+.button-important {
+  background-color: var(--pri-light-color);
+  border-color: var(--pri-dark-color);
+  color: var(--pri-dark-color);
+}
+
+.button-important:hover {
+  background-color: var(--pri-dark-color);
+  color: #eee;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.word-file {
+  color: hsl(230, 80%, 40%);
+  border-color: hsl(230, 70%, 60%);
+}
+
+.word-file:hover {
+  color: white;
+  border-color: hsl(230, 70%, 60%);
+  background-color: hsl(230, 70%, 40%);
+}
+
+.hwp-file {
+  color: hsl(195, 80%, 40%);
+  border-color: hsl(195, 70%, 50%);
+}
+
+.hwp-file:hover {
+  color: white;
+  border-color: hsl(195, 70%, 60%);
+  background-color: hsl(195, 80%, 50%);
+}
+
+.flex-row {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Start SEOBSEOB */
+.wrap_table table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+}
+.wrap_table table tr th{
+  width: 300px;
+  height: 50px;
+  background: rgb(92,107,192);
+  background: linear-gradient(0deg, rgba(92,107,192,1) 0%, rgba(26,35,126,1) 100%);
+  color: #fafafa;
+}
+.wrap_table table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table table tr:nth-child(even) {
+  border: 1px solid #bdc3c7;
+}
+.wrap_table3 table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+}
+.wrap_table3 table tr th{
+  width: 300px;
+  height: 50px;
+  background: rgb(251,192,45);
+  background: linear-gradient(0deg, rgba(251,192,45,1) 0%, rgba(249,168,37,1) 100%);
+  color: #fafafa;
+}
+.wrap_table3 table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table3 table tr:nth-child(even) {
+  border: 1px solid #bdc3c7;
+}
+
+.wrap_table2 table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+  border: 1px solid #bdc3c7;
+}
+.wrap_table2 table tr th{
+  width: 300px;
+  background: rgb(0,150,136);
+  background: linear-gradient(0deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 100%);
+  color: #fafafa;
+}
+
+.th_ {
+  width: 300px;
+  background: rgb(0,150,136);
+  background: linear-gradient(0deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 100%);
+  color: #fafafa;
+}
+
+.wrap_table2 table th{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table2 table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+
+.session #title {
+  padding: 12px 0 0 0;
+  text-align: center;
+  font-family: 'notoSans';
+  font-size: 15pt;
+  font-weight: bold;
+}
+.session #chair_person {
+  padding: 12px 0 20px 0;
+  text-align: center;
+  font-family: 'notoSans';
+}
+.session table {
+  padding : 0 0 7px 0;
+  font-size: 12pt;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  width: 100%;
+}
+.session #idx {
+  padding-right: 20px;
+  font-weight: bold;
+}
+#paper_title {
+  font-weight: bold;
+}
+
+.session #paper_title:nth-child(even) {
+  background-color: #eee;
+  /* border-bottom: 1px solid #000; */
+  border-width: 30%;
+}
+.poster{
+  margin: 0 auto;
+  /* background-color: burlywood; */
+  width: 100%;
+  height:250px;
+  text-align: center;
+  text-decoration: none;
+}
+.poster .img_container{
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  /* background-color: aqua; */
+  display: inline-block;
+  height: 100%;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+.program_location{
+  margin: 0 auto;
+  /* background-color: burlywood; */
+  width: 100%;
+  height:300px;
+  text-align: center;
+  text-decoration: none;
+}
+.program_location .img_container {
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  /* background-color: aqua; */
+  display: inline-block;
+  height: 100%;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+
+
+.img_container img{
+  /* width: 250px;
+  height : 250px; */
+  width: 100%;
+  height: 100%;
+}
+.program_location .text_container{
+  /* position: relative; */
+  /* top: 50%; */
+  /* left: 50%; */
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  height: 100%;
+  display: inline-block;
+  font-family: 'NotoSans';
+  /* transform: translate(-50%,-50%); */
+}
+.text_container .text_contents{
+  width: 100%;
+}
+.wrap_map{
+  margin: 0 auto;
+  width: 100%;
+  height: 550px;
+  background-color: aquamarine;
+  
+}
+/* .program_location .img_container .img_{
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+.img_ img{
+  width: 250px;
+  height: 250px;
+} */
+.img_container .location_contents{
+  background-color:aquamarine;
+  display: inline-block;
+  width:50%;
+  height:100%;
+  text-align: center;
+}
+/* End SEOBSEOB */
+
+@media screen and (max-width: 768px) {
+  .top {
+    padding: 1em;
+  }
+
+  .top div {
+    width: fit-content;
+    padding-inline: 0.125rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .image-list {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .image-list div {
+    max-width: 25em;
+    margin-inline: auto;
+  }
+
+}
+
+</style>
+    <link rel="icon" href="http://cvpr.kumoh.ac.kr/ucwit2024/kumoh_icon.jpg" type="image/x-icon">
+    <title>연락처 :: 국립금오공과대학교 UCWIT2024</title>
+  </head>
+  <body>
+    <div class="top">
+      <a class="title" href="index.html">UCWIT2024</a>
+      <div>
+        <p><b>주최</b> 한국정보과학회</p>
+        <p><b>주관</b> 한국정보과학회 영남지부</p>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <ul>
+          <a href="index.html"><li>행사안내</li></a>
+          <a href="organizer.html"><li>대회조직</li></a>
+          <a href="submit.html"><li>논문투고</li></a>
+          <a href="program.html"><li>프로그램</li></a>
+          <a href="registration.html"><li>등록</li></a>
+          <a href="details.html"><li>발표 및 행사장소 안내</li></a>
+          <a href="." class="active"><li>연락처</li></a>
+          <a href="announcements.html"><li>공지사항</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>연락처</h1>
+      <h2>대회 관련 문의</h2>
+      <section>
+        <p><b>국립금오공과대학교</b> 황재연 연구원</p>
+        <p>jaeyeon2001@gmail.com</p>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>국립금오공과대학교 컴퓨터공학과</p>
+        <div class="flex-row">
+          <span>우)39177 경상북도 구미시 대학로 61</span>
+          <span>디지털관</span>
+        </div>
+      </div>
+    </footer>
+  
+
+</body>

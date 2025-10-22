@@ -1,0 +1,702 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="download_date" content="2025-09-09T08:07:29.919Z"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --bg-color: #f4f4f4;
+  --dark-color: #333;
+  --light-color: #666;
+  --pri-dark-color: hsl(13, 80%, 12%);
+  --pri-light-color: hsl(40, 90%, 65%);
+}
+@font-face {
+  font-family: "notoSans";
+  src: url("undefined") format("truetype");
+  font-weight: normal;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--dark-color);
+  background: var(--bg-color);
+
+  word-break: keep-all;
+}
+
+body > p {
+  padding-bottom: 1rem;
+}
+
+.top {
+  margin: auto;
+  max-width: 55rem;
+  padding: 2em 1em;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.title {
+  display: block;
+  font-weight: 800;
+  font-size: 3.5rem;
+  width: fit-content;
+  line-height: 1;
+}
+
+.top div {
+  width: fit-content;
+  padding-inline: 0.25rem;
+}
+
+.top p {
+  font-size: 0.875rem;
+}
+
+h1 {
+  padding-block: 1em 0.5em;
+  width: fit-content;
+
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+h1::after {
+  content: "";
+  display: block;
+  margin-top: 0.25em;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--dark-color);
+}
+
+h2 {
+  padding-block: 1em;
+  width: fit-content;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h2::after {
+  content: "";
+  display: block;
+
+  margin-top: 0.25em;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--dark-color);
+}
+
+h2:first-of-type {
+  padding-top: 0;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  background-color: var(--bg-color);
+  z-index: 100;
+}
+
+nav {
+  margin-inline: auto;
+  max-width: 55rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+a:hover {
+  color: var(--light-color);
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--dark-color);
+}
+
+nav ul a {
+  flex-shrink: 0;
+  padding-inline: 1.25rem;
+  padding-block: 0.75rem;
+  font-weight: 400;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav ul a > a {
+  transition: color 0.2s ease-in-out;
+}
+
+nav ul a:hover {
+  background-color: var(--light-color);
+}
+
+nav ul a:hover {
+  color: white;
+}
+
+.active {
+  font-weight: 900;
+  background-color: var(--dark-color);
+}
+
+.active {
+  color: white;
+}
+
+main {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  max-width: 55rem;
+  min-height: 50vh;
+}
+
+section {
+  padding-inline: 0.5rem;
+}
+
+.image-list {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  
+}
+
+.image-list div {
+  border: #333 3px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.image-list img {
+  object-fit: cover;
+  width: 100%;
+  vertical-align: bottom;
+  height: 80px;
+}
+
+footer {
+  max-width: 55rem;
+  margin-inline: auto;
+  padding: 1rem;
+  border-top: var(--dark-color) solid 3px;
+  padding-block: 2rem;
+  margin-top: 4rem;
+  font-size: 1rem;
+}
+
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+}
+
+.grid-head {
+  font-weight: 800;
+  text-align: end;
+}
+
+.list li {
+  list-style-type: disc;
+  margin-inline: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1rem;
+  width: fit-content;
+  border-radius: 0.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  background-color: var(--bg-color);
+  color: var(--dark-color);
+  font-weight: bold;
+
+  border: 3px solid var(--dark-color);
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button:hover {
+  color: #eee;
+  background-color: var(--dark-color);
+}
+
+.button-important {
+  background-color: var(--pri-light-color);
+  border-color: var(--pri-dark-color);
+  color: var(--pri-dark-color);
+}
+
+.button-important:hover {
+  background-color: var(--pri-dark-color);
+  color: #eee;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.word-file {
+  color: hsl(230, 80%, 40%);
+  border-color: hsl(230, 70%, 60%);
+}
+
+.word-file:hover {
+  color: white;
+  border-color: hsl(230, 70%, 60%);
+  background-color: hsl(230, 70%, 40%);
+}
+
+.hwp-file {
+  color: hsl(195, 80%, 40%);
+  border-color: hsl(195, 70%, 50%);
+}
+
+.hwp-file:hover {
+  color: white;
+  border-color: hsl(195, 70%, 60%);
+  background-color: hsl(195, 80%, 50%);
+}
+
+.flex-row {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Start SEOBSEOB */
+.wrap_table table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+}
+.wrap_table table tr th{
+  width: 300px;
+  height: 50px;
+  background: rgb(92,107,192);
+  background: linear-gradient(0deg, rgba(92,107,192,1) 0%, rgba(26,35,126,1) 100%);
+  color: #fafafa;
+}
+.wrap_table table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table table tr:nth-child(even) {
+  border: 1px solid #bdc3c7;
+}
+.wrap_table3 table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+}
+.wrap_table3 table tr th{
+  width: 300px;
+  height: 50px;
+  background: rgb(251,192,45);
+  background: linear-gradient(0deg, rgba(251,192,45,1) 0%, rgba(249,168,37,1) 100%);
+  color: #fafafa;
+}
+.wrap_table3 table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table3 table tr:nth-child(even) {
+  border: 1px solid #bdc3c7;
+}
+
+.wrap_table2 table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+  border: 1px solid #bdc3c7;
+}
+.wrap_table2 table tr th{
+  width: 300px;
+  background: rgb(0,150,136);
+  background: linear-gradient(0deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 100%);
+  color: #fafafa;
+}
+
+.th_ {
+  width: 300px;
+  background: rgb(0,150,136);
+  background: linear-gradient(0deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 100%);
+  color: #fafafa;
+}
+
+.wrap_table2 table th{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table2 table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+
+.session #title {
+  padding: 12px 0 0 0;
+  text-align: center;
+  font-family: 'notoSans';
+  font-size: 15pt;
+  font-weight: bold;
+}
+.session #chair_person {
+  padding: 12px 0 20px 0;
+  text-align: center;
+  font-family: 'notoSans';
+}
+.session table {
+  padding : 0 0 7px 0;
+  font-size: 12pt;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  width: 100%;
+}
+.session #idx {
+  padding-right: 20px;
+  font-weight: bold;
+}
+#paper_title {
+  font-weight: bold;
+}
+
+.session #paper_title:nth-child(even) {
+  background-color: #eee;
+  /* border-bottom: 1px solid #000; */
+  border-width: 30%;
+}
+.poster{
+  margin: 0 auto;
+  /* background-color: burlywood; */
+  width: 100%;
+  height:250px;
+  text-align: center;
+  text-decoration: none;
+}
+.poster .img_container{
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  /* background-color: aqua; */
+  display: inline-block;
+  height: 100%;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+.program_location{
+  margin: 0 auto;
+  /* background-color: burlywood; */
+  width: 100%;
+  height:300px;
+  text-align: center;
+  text-decoration: none;
+}
+.program_location .img_container {
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  /* background-color: aqua; */
+  display: inline-block;
+  height: 100%;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+
+
+.img_container img{
+  /* width: 250px;
+  height : 250px; */
+  width: 100%;
+  height: 100%;
+}
+.program_location .text_container{
+  /* position: relative; */
+  /* top: 50%; */
+  /* left: 50%; */
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  height: 100%;
+  display: inline-block;
+  font-family: 'NotoSans';
+  /* transform: translate(-50%,-50%); */
+}
+.text_container .text_contents{
+  width: 100%;
+}
+.wrap_map{
+  margin: 0 auto;
+  width: 100%;
+  height: 550px;
+  background-color: aquamarine;
+  
+}
+/* .program_location .img_container .img_{
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+.img_ img{
+  width: 250px;
+  height: 250px;
+} */
+.img_container .location_contents{
+  background-color:aquamarine;
+  display: inline-block;
+  width:50%;
+  height:100%;
+  text-align: center;
+}
+/* End SEOBSEOB */
+
+@media screen and (max-width: 768px) {
+  .top {
+    padding: 1em;
+  }
+
+  .top div {
+    width: fit-content;
+    padding-inline: 0.125rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .image-list {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .image-list div {
+    max-width: 25em;
+    margin-inline: auto;
+  }
+
+}
+
+</style>
+    <link rel="icon" href="http://" type="image/x-icon">
+    <title>논문투고 :: 인제대학교 UCWIT2025</title>
+  </head>
+  <body>
+    <div class="top">
+      <a class="title" href="index.html">UCWIT2025</a>
+      <div>
+        <p><b>주최</b> 한국정보과학회</p>
+        <p><b>주관</b> 한국정보과학회 영남지부</p>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <ul>
+          <a href="index.html"><li>행사안내</li></a>
+          <a href="organizer.html"><li>대회조직</li></a>
+          <a href="." class="active"><li>논문투고</li></a>
+          <a href="program.html"><li>프로그램</li></a>
+          <a href="registration.html"><li>등록</li></a>
+          <a href="details.html"><li>발표 및 행사장소 안내</li></a>
+          <a href="contacts.html"><li>연락처</li></a>
+          <a href="announcements.html"><li>공지사항</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>주요 일정</h1>
+      <section>
+        <div class="grid-col-2">
+          <p class="grid-head">논문 접수 마감</p>
+          <p>2025년 11월 10일(월)</p>
+          <p class="grid-head">사전 등록 마감</p>
+          <p>2025년 11월 13일(목)</p>
+          <p class="grid-head">행사 기간</p>
+          <p>2025년 11월 21일(금) ~ 22일(토)</p>
+        </div>
+      </section>
+      <h1>논문 주제</h1>
+      <section>
+        <ul class="list">
+          <!-- <li>Artificial Intelligence</li>
+          <li>Big Data</li>
+          <li>The 4th Industrial Revolution</li>
+          <li>Internet of Things</li>
+          <li>Ubiquitous and Mobile Technologies Software Engineering</li>
+          <li>Enterprise Application Embedded Systems</li>
+          <li>
+            Embedded SW Web Engineering
+            <ul class="list">
+              <li>Web Services</li>
+              <li>SOA</li>
+              <li>Semantic Web</li>
+              <li>Ontology</li>
+            </ul>
+          </li>
+          <li>etc.</li> -->
+          <li>Artificial Intelligence, VR/AR/XR/ Metaverse</li>
+          <li>Internet of Things, Ubiquitos and Mobile technologies</li>
+          <li>Big Data, Software Engineering and Mobile technologies</li>
+          <li>RFID/USN, LBS, and GIS</li>
+          <li>Embedded Systems, Embedded SW</li>
+          <li>Web engineering: Web services, SOA, Semantic web and ontology</li>
+          <li>통신 및 네트워크 제 4차 산업혁명</li>
+          <li>지식공학 데이터베이스 전기공학 전자공학 소프트웨어</li>
+          <li>etc.</li>
+        </ul>
+      </section>
+      <h1>제출 방법</h1>
+      <h2>Call For Paper</h2>
+      <section class="file-list">
+        <a class="button" href="CFP_pnu1_pdf.html">
+          <svg style="width: 1.5rem; height: 1.5rem; font-weight: 900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M19.5 21a3 3 0 003-3V9a3 3 0 00-3-3h-5.379a.75.75 0 01-.53-.22L11.47 3.66A2.25 2.25 0 009.879 3H4.5a3 3 0 00-3 3v12a3 3 0 003 3h15zm-6.75-10.5a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V10.5z" clip-rule="evenodd"></path>
+          </svg>
+          CFP.pdf 받기
+        </a>
+      </section>
+
+      <h2>논문 양식</h2>
+      <section class="file-list">
+        <a class="button word-file" href="https://drive.google.com/file/d/1QEEcs44qEinTlEoDzmKjFfFLqzW8Kgli/view">
+        <!--
+        <a class="button word-file" href="https://drive.google.com/uc?export=download&id=1QEEcs44qEinTlEoDzmKjFfFLqzW8Kgli" target="_blank" rel="noopener noreferrer">
+          -->
+          <svg style="width: 1.5rem; height: 1.5rem; font-weight: 900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M19.5 21a3 3 0 003-3V9a3 3 0 00-3-3h-5.379a.75.75 0 01-.53-.22L11.47 3.66A2.25 2.25 0 009.879 3H4.5a3 3 0 00-3 3v12a3 3 0 003 3h15zm-6.75-10.5a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V10.5z" clip-rule="evenodd"></path>
+          </svg>
+          UCWIT_template.docx
+        </a>
+
+        <a class="button hwp-file" href="https://drive.google.com/file/d/1jGBZAQ1TajhA--aK0g8TM-xhUXOgneaf/view">
+        <!--
+        <a class="button hwp-file" href="https://drive.google.com/uc?export=download&id=1jGBZAQ1TajhA--aK0g8TM-xhUXOgneaf">
+          -->
+          <svg style="width: 1.5rem; height: 1.5rem; font-weight: 900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M19.5 21a3 3 0 003-3V9a3 3 0 00-3-3h-5.379a.75.75 0 01-.53-.22L11.47 3.66A2.25 2.25 0 009.879 3H4.5a3 3 0 00-3 3v12a3 3 0 003 3h15zm-6.75-10.5a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V10.5z" clip-rule="evenodd"></path>
+          </svg>
+          UCWIT_template.hwp
+        </a>
+      </section>
+
+      <h2>분량</h2>
+      <section>
+        <p>2 페이지 ~ 4 페이지</p>
+      </section>
+
+      <h2>논문 제출 링크</h2>
+      <section class="file-list">
+        <a class="button button-important" href="https://docs.google.com/forms/d/1nzagyq9EoUdUWCqoZU4c-84gqrmA7zdSEY0E-M1Cez4" target="_blank">
+          <svg style="width: 1.5rem; height: 1.5rem; font-weight: 900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zm6.905 9.97a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72V18a.75.75 0 001.5 0v-4.19l1.72 1.72a.75.75 0 101.06-1.06l-3-3z" clip-rule="evenodd"></path>
+            <path d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z"></path>
+          </svg>
+          구글 폼으로 논문 제출하기
+        </a>
+      </section>
+
+      <h2>이메일 제출</h2>
+      <section>
+        <p style="margin-bottom: 0.5em">
+          <span style="color: red">*구글 계정이 없으실 경우</span>
+          <u style="text-decoration-thickness: 2px">아래의 템플릿</u>을 작성하여
+        </p>
+        <p style="margin-bottom: 1em">
+          논문과 함께 <b>jaeyeon2001@gmail.com</b>으로 제출 바랍니다.
+        </p>
+        <div class="file-list">
+          <a class="button word-file" href="https://drive.google.com/file/d/1iLkSqb44aPRAAZYlFaXJm_b6X4O8ohuu/view">
+            <svg style="width: 1.5rem; height: 1.5rem; font-weight: 900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M19.5 21a3 3 0 003-3V9a3 3 0 00-3-3h-5.379a.75.75 0 01-.53-.22L11.47 3.66A2.25 2.25 0 009.879 3H4.5a3 3 0 00-3 3v12a3 3 0 003 3h15zm-6.75-10.5a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V10.5z" clip-rule="evenodd"></path>
+            </svg>
+            submission_details.docx
+          </a>
+          <a class="button hwp-file" href="https://drive.google.com/file/d/1bTrxIARuKR5SxSHnBn_-8LWYYXI6p5T9/view">
+            <svg style="width: 1.5rem; height: 1.5rem; font-weight: 900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M19.5 21a3 3 0 003-3V9a3 3 0 00-3-3h-5.379a.75.75 0 01-.53-.22L11.47 3.66A2.25 2.25 0 009.879 3H4.5a3 3 0 00-3 3v12a3 3 0 003 3h15zm-6.75-10.5a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V10.5z" clip-rule="evenodd"></path>
+            </svg>
+            submission_details.hwp
+          </a>
+        </div>
+      </section>
+      <h1>주의 사항</h1>
+      <section>
+        <ul class="list">
+          <!-- <li>
+            논문 제출자 중 1인 이상은 등록을 하고 온라인 구두 발표에 반드시
+            참여해야 합니다.
+          </li>
+          <li>
+            발표자는 세션시작 10분 전까지 온라인 발표장에 입장하여 준비해야
+            합니다.
+          </li> -->
+          <li>구두발표 자료는 파워포인트 PPT 또는 Adobe의 PDF로 가능합니다.</li>
+          <li>
+            구두발표 시간은 <b>15분</b>이며, <b>10분 발표와 5분 질문</b>으로 구성됩니다.
+          </li>
+          <!-- <li>우수 발표논문에 대해서는 우수논문상을 시상합니다.</li> -->
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>인제대학교 컴퓨터공학부</p>
+        <div class="flex-row">
+          <span>우)50834 경남 김해시 인제로 197</span>
+          <span>장영실관</span>
+        </div>
+      </div>
+    </footer>
+  
+
+</body>

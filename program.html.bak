@@ -1,0 +1,1008 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="download_date" content="2025-09-09T08:07:29.919Z"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --bg-color: #f4f4f4;
+  --dark-color: #333;
+  --light-color: #666;
+  --pri-dark-color: hsl(13, 80%, 12%);
+  --pri-light-color: hsl(40, 90%, 65%);
+}
+@font-face {
+  font-family: "notoSans";
+  src: url("undefined") format("truetype");
+  font-weight: normal;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--dark-color);
+  background: var(--bg-color);
+
+  word-break: keep-all;
+}
+
+body > p {
+  padding-bottom: 1rem;
+}
+
+.top {
+  margin: auto;
+  max-width: 55rem;
+  padding: 2em 1em;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.title {
+  display: block;
+  font-weight: 800;
+  font-size: 3.5rem;
+  width: fit-content;
+  line-height: 1;
+}
+
+.top div {
+  width: fit-content;
+  padding-inline: 0.25rem;
+}
+
+.top p {
+  font-size: 0.875rem;
+}
+
+h1 {
+  padding-block: 1em 0.5em;
+  width: fit-content;
+
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+h1::after {
+  content: "";
+  display: block;
+  margin-top: 0.25em;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--dark-color);
+}
+
+h2 {
+  padding-block: 1em;
+  width: fit-content;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h2::after {
+  content: "";
+  display: block;
+
+  margin-top: 0.25em;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--dark-color);
+}
+
+h2:first-of-type {
+  padding-top: 0;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  background-color: var(--bg-color);
+  z-index: 100;
+}
+
+nav {
+  margin-inline: auto;
+  max-width: 55rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+a:hover {
+  color: var(--light-color);
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--dark-color);
+}
+
+nav ul a {
+  flex-shrink: 0;
+  padding-inline: 1.25rem;
+  padding-block: 0.75rem;
+  font-weight: 400;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav ul a > a {
+  transition: color 0.2s ease-in-out;
+}
+
+nav ul a:hover {
+  background-color: var(--light-color);
+}
+
+nav ul a:hover {
+  color: white;
+}
+
+.active {
+  font-weight: 900;
+  background-color: var(--dark-color);
+}
+
+.active {
+  color: white;
+}
+
+main {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  max-width: 55rem;
+  min-height: 50vh;
+}
+
+section {
+  padding-inline: 0.5rem;
+}
+
+.image-list {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  
+}
+
+.image-list div {
+  border: #333 3px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.image-list img {
+  object-fit: cover;
+  width: 100%;
+  vertical-align: bottom;
+  height: 80px;
+}
+
+footer {
+  max-width: 55rem;
+  margin-inline: auto;
+  padding: 1rem;
+  border-top: var(--dark-color) solid 3px;
+  padding-block: 2rem;
+  margin-top: 4rem;
+  font-size: 1rem;
+}
+
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+}
+
+.grid-head {
+  font-weight: 800;
+  text-align: end;
+}
+
+.list li {
+  list-style-type: disc;
+  margin-inline: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1rem;
+  width: fit-content;
+  border-radius: 0.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  background-color: var(--bg-color);
+  color: var(--dark-color);
+  font-weight: bold;
+
+  border: 3px solid var(--dark-color);
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button:hover {
+  color: #eee;
+  background-color: var(--dark-color);
+}
+
+.button-important {
+  background-color: var(--pri-light-color);
+  border-color: var(--pri-dark-color);
+  color: var(--pri-dark-color);
+}
+
+.button-important:hover {
+  background-color: var(--pri-dark-color);
+  color: #eee;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.word-file {
+  color: hsl(230, 80%, 40%);
+  border-color: hsl(230, 70%, 60%);
+}
+
+.word-file:hover {
+  color: white;
+  border-color: hsl(230, 70%, 60%);
+  background-color: hsl(230, 70%, 40%);
+}
+
+.hwp-file {
+  color: hsl(195, 80%, 40%);
+  border-color: hsl(195, 70%, 50%);
+}
+
+.hwp-file:hover {
+  color: white;
+  border-color: hsl(195, 70%, 60%);
+  background-color: hsl(195, 80%, 50%);
+}
+
+.flex-row {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Start SEOBSEOB */
+.wrap_table table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+}
+.wrap_table table tr th{
+  width: 300px;
+  height: 50px;
+  background: rgb(92,107,192);
+  background: linear-gradient(0deg, rgba(92,107,192,1) 0%, rgba(26,35,126,1) 100%);
+  color: #fafafa;
+}
+.wrap_table table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table table tr:nth-child(even) {
+  border: 1px solid #bdc3c7;
+}
+.wrap_table3 table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+}
+.wrap_table3 table tr th{
+  width: 300px;
+  height: 50px;
+  background: rgb(251,192,45);
+  background: linear-gradient(0deg, rgba(251,192,45,1) 0%, rgba(249,168,37,1) 100%);
+  color: #fafafa;
+}
+.wrap_table3 table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table3 table tr:nth-child(even) {
+  border: 1px solid #bdc3c7;
+}
+
+.wrap_table2 table{
+  text-align : center;
+  background-color: #fafafa;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(32,32,32,.3);
+  font-family: 'notoSans';
+  border: 1px solid #bdc3c7;
+}
+.wrap_table2 table tr th{
+  width: 300px;
+  background: rgb(0,150,136);
+  background: linear-gradient(0deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 100%);
+  color: #fafafa;
+}
+
+.th_ {
+  width: 300px;
+  background: rgb(0,150,136);
+  background: linear-gradient(0deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 100%);
+  color: #fafafa;
+}
+
+.wrap_table2 table th{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+.wrap_table2 table td{
+  padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+}
+
+.session #title {
+  padding: 12px 0 0 0;
+  text-align: center;
+  font-family: 'notoSans';
+  font-size: 15pt;
+  font-weight: bold;
+}
+.session #chair_person {
+  padding: 12px 0 20px 0;
+  text-align: center;
+  font-family: 'notoSans';
+}
+.session table {
+  padding : 0 0 7px 0;
+  font-size: 12pt;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  width: 100%;
+}
+.session #idx {
+  padding-right: 20px;
+  font-weight: bold;
+}
+#paper_title {
+  font-weight: bold;
+}
+
+.session #paper_title:nth-child(even) {
+  background-color: #eee;
+  /* border-bottom: 1px solid #000; */
+  border-width: 30%;
+}
+.poster{
+  margin: 0 auto;
+  /* background-color: burlywood; */
+  width: 100%;
+  height:250px;
+  text-align: center;
+  text-decoration: none;
+}
+.poster .img_container{
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  /* background-color: aqua; */
+  display: inline-block;
+  height: 100%;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+.program_location{
+  margin: 0 auto;
+  /* background-color: burlywood; */
+  width: 100%;
+  height:300px;
+  text-align: center;
+  text-decoration: none;
+}
+.program_location .img_container {
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  /* background-color: aqua; */
+  display: inline-block;
+  height: 100%;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+
+
+.img_container img{
+  /* width: 250px;
+  height : 250px; */
+  width: 100%;
+  height: 100%;
+}
+.program_location .text_container{
+  /* position: relative; */
+  /* top: 50%; */
+  /* left: 50%; */
+  width: calc(100%/2 - 70px);
+  width: -webkit-calc(100%/2-70px);
+  width: -moz-calc(100%/2-70px);
+  width: -ms-calc(100%/2-70px);
+  width: -o-calc(100%/2-70px);
+  height: 100%;
+  display: inline-block;
+  font-family: 'NotoSans';
+  /* transform: translate(-50%,-50%); */
+}
+.text_container .text_contents{
+  width: 100%;
+}
+.wrap_map{
+  margin: 0 auto;
+  width: 100%;
+  height: 550px;
+  background-color: aquamarine;
+  
+}
+/* .program_location .img_container .img_{
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+  box-shadow: 0 4px 7px rgba(32,32,32,.3);
+}
+.img_ img{
+  width: 250px;
+  height: 250px;
+} */
+.img_container .location_contents{
+  background-color:aquamarine;
+  display: inline-block;
+  width:50%;
+  height:100%;
+  text-align: center;
+}
+/* End SEOBSEOB */
+
+@media screen and (max-width: 768px) {
+  .top {
+    padding: 1em;
+  }
+
+  .top div {
+    width: fit-content;
+    padding-inline: 0.125rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .image-list {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .image-list div {
+    max-width: 25em;
+    margin-inline: auto;
+  }
+
+}
+
+</style>
+    <link rel="icon" href="http://" type="image/x-icon">
+    <title>프로그램 :: 인제대학교 UCWIT2025</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-family: "Pretendard", sans-serif;
+      }
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 10px;
+      }
+      th {
+        background-color: #e7e6e6;
+        font-weight: bold;
+      }
+      .highlight {
+        background-color: #d9e2f3;
+      }
+      .break {
+        background-color: #92d050;
+      }
+      .full-width {
+        background-color: #d9e2f3;
+        font-weight: bold;
+      }
+    </style>
+  
+  </head>
+  <body>
+    <div class="top">
+      <a class="title" href="index.html">UCWIT2025</a>
+      <div>
+        <p><b>주최</b> 한국정보과학회</p>
+        <p><b>주관</b> 한국정보과학회 영남지부</p>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <ul>
+          <a href="index.html"><li>행사안내</li></a>
+          <a href="organizer.html"><li>대회조직</li></a>
+          <a href="submit.html"><li>논문투고</li></a>
+          <a href="." class="active"><li>프로그램</li></a>
+          <a href="registration.html"><li>등록</li></a>
+          <a href="details.html"><li>발표 및 행사장소 안내</li></a>
+          <a href="contacts.html"><li>연락처</li></a>
+          <a href="announcements.html"><li>공지사항</li></a>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <br>
+      <!-- <p>논문편성결과 공고: 2024/11/20 21:00 이후~</p> -->
+      <!-- <br/> -->
+      <h1>프로시딩</h1>
+      
+      <p>Download the proceeding will be <a href="/" style="color:red; font-size:15pt;"><b>here</b></a></p>
+      <h1>행사 일정</h1>
+
+      <!-- <p style="text-align:center; padding-bottom: 10px;"><b>TBA</b></p> -->
+      <!-- <div class="wrap_table">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">시간</th>
+              <th colspan="4">장소</th>
+            </tr>
+            <tr>
+              <th>B127<br />(B1)</th>
+              <th>B136<br />(B1)</th>
+              <th>D129<br />(B1)</th>
+              <th>Lobby<br />(1F)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td>12:30 ~</td>
+              <td colspan="4">현장 등록</td>
+            </tr>
+            <tr class="highlight">
+              <td>13:30 ~ 14:00</td>
+              <td>개회식</td>
+              <td colspan="2" rowspan="3"></td>
+              <td rowspan="3"></td>
+            </tr>
+            <tr class="highlight">
+              <td>14:00 ~ 14:30</td>
+              <td rowspan="2">초청강연</td>
+            </tr>
+            <tr class="highlight">
+              <td>14:30 ~ 15:00 <br /></td>
+              
+            </tr>
+            <tr class="highlight">
+              <td>15:00 ~ 15:30</td>
+              <td rowspan="2"></td>
+              <td rowspan="2">Oral Session 1</td>
+              <td rowspan="2">Oral Session 2</td>
+              <td rowspan="3">
+                Poster Session <br />*3시까지 부착 <br />
+                *발표자 현장 대기<br />(16:00 ~ 16:30)
+              </td>
+            </tr>
+            <tr class="highlight">
+              <td>15:30 ~ 16:00</td>
+            </tr>
+            <tr class="highlight">
+              <td>16:00 ~ 16:30</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="highlight">
+              <td>16:30 ~ 17:00</td>
+              <td rowspan="2">
+                미래기술 튜토리얼<br />
+                16:30 "Intelligent Organ-on-chips: Enabling Technologies for Biomedical Research"
+                <br />정세훈 교수(세종대학교 인공지능데이터사이언스학과) <br />
+                17:00 "AI, 첨단 제조의 새로운 가치" <br />
+                이천(한국로봇리퍼브센터장)
+              </td>
+              <td rowspan="2">Oral Session 3</td>
+              <td rowspan="2">Oral Session 4</td>
+              <td rowspan="2"></td>
+            </tr>
+            <tr class="highlight">
+              <td>17:00 ~ 17:30</td>
+            </tr>
+            <tr class="highlight">
+              <td>17:30 ~ 18:00</td>
+              <td>
+                폐회식 <br />
+                - 시상식 (우수논문 4편) <br />
+                -경품추첨(아이패드1대) -->
+              <!-- </td>
+              <td colspan="3"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <br>
+      <!-- <div class="wrap_table">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">시간</th>
+            <th colspan="4">장소</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td>10:00 ~ 12:00</td>
+            <td colspan="4">한국정보과학회영남지부총회</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+      <!-- <div class="wrap_table">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">시간</th>
+              <th colspan="4">장소</th>
+            </tr>
+            <tr>
+              <th>B123<br/>(B1)</th>
+              <th>B123<br/>(B1)</th>
+              <th>B123<br/>(B1)</th>
+              <th>Lobby<br/>(1F)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td>12:00 -</td>
+              <td colspan="4">등록 부스 오픈</td>
+            </tr>
+            <tr class="highlight">
+              <td>13:30 - 14:00</td>
+              <td>개회식</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="highlight">
+              <td>14:00 - 14:30 </td>
+              <td rowspan="2">(초청강연)</td>
+              <td colspan="2"></td>
+              <td rowspan="4"></td>
+            </tr>
+            <tr class="highlight">
+              <td>14:30 - 15:00 <br /></td>
+              <td>(Oral Session 1)</td>
+              <td>(Oral Session 2)</td>
+              <td>
+                Poster Session <br />*3시까지 부착 <br />*발표자 현장대기 4:00~4:30
+              </td>
+            </tr>
+            <tr class="highlight">
+              <td>16:30 - 17:30</td>
+              <td>Oral Session 3</td>
+              <td>Oral Session 4</td>
+            </tr>
+            <tr class="highlight">
+              <td>
+                16:30 - 17:40 <br />
+                (미래기술 튜토리얼)
+              </td>
+              <td colspan="1">
+                Introduction to Intelligent Neuroengineering, 황한정 교수
+                <br />(고려대학교)
+              </td>
+              <td colspan="2">
+                Quantum Computing & Its Application, 류훈 교수<br />
+                (인제대학교)
+              </td>
+            </tr>
+            <tr class="highlight">
+              <td>17:40 - 18:00</td>
+              <td colspan="3">학술대회 폐회</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+<br>
+      
+      <h1>Oral Session(구두 발표)</h1>
+      <p style="color: red;">*구두발표를 위한 PC와 프로젝터가 준비되어 있습니다. <br>
+        *발표자료는 PPT 및 PDF로 준비해서 USB 메모리에 담아 오세요.</p>
+        <br>
+      <h2>Oral Session 1: Large Language Models &amp; Generative AI</h2> 
+      <p>15:00~16:00, 장영실관 B136 (B1),
+        Chair: 안형태 교수 (인제대학교)</p><br>
+
+      <h2>Oral Session 2: Computer Vision &amp; Pattern Recognition with 
+        Deep Learning</h2> 
+      <p>15:00~16:00, 장영실관 129 (1F),
+        Chair: 김경수 교수 (인제대학교)</p><br>
+
+      <h2>Oral Session 3: ICBMS (IoT, Cloud, Bigdata, Mobile, Security) Technology</h2> 
+      <p>16:30~17:30, 장영실관 B136 (B1),
+        Chair: 최태영 교수 (인제대학교)</p><br> 
+
+      <h2>Oral Session 4: Machine Learning Applications</h2> 
+      <p>16:30~17:30, 장영실관 129 (1F),
+        Chair: 김성렬 교수 (인제대학교)</p><br> 
+
+
+      <h1>Poster Session(포스터 발표)</h1>
+
+      <a href="details.html" style="color: red;">*포스터 규격은 발표 및 행사장소 안내 페이지 참조 (클릭)</a>
+      <br>
+      <p style="color: red;"> 15:00  포스터 부착 완료 <br> 16:00 ~ 16:30  포스터발표</p>
+      <br>
+
+      <!-- <p style="text-align:center; padding-bottom: 10px;"><b>TBA</b></p> -->
+
+
+
+      <!-- <div class="wrap_table2">
+        <table>
+          <tr>
+            <th rowspan="2">일시</th>
+            <th colspan="3">행사장</th>
+          </tr>
+
+          <tr>
+            <td class="th_"><b>Room #1</b> <br/> (기계관 국제회의장)</td>
+            <td class="th_"><b>Room #2</b> <br/> (기계관 101호)</td>
+            <td class="th_"><b>Room #3</b> <br/> (기계관 102호)</td>
+          </tr>
+
+          <tr>
+            <td>14:10 ~ 15:40 ('90)</td>
+            <td>Metaverse, Contents & Network Technology</td>
+            <td>Recent Advances in Deep Learning</td>
+            <td>Application of Artificial Intelligence</td>
+          </tr>
+        </table>
+      </div> -->
+
+      <!-- <h1>세션</h1>
+      <p>Oral Session(구두 발표)</p>
+      <p>Poster Session(포스터 발표)</p> -->
+      <!-- <p style="text-align:center; padding-bottom: 10px;"><b>TBA</b></p> -->
+      <!-- <div class="session">
+        <p id="title">Session #1 : Metaverse, Contents & Network Technology</p>
+        <p id="chair_person">좌장 : 유 영 환(부산대학교)</p>
+        <br/>
+        <table>
+          <tr><td id="idx" rowspan="2">1-1</td><td id="paper_title">실현 불가능한 상황에서도 견고한 IoT 네트워크를 위한 전력 할당</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">응우옌 쑤안 둥 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">1-2</td><td id="paper_title">6TiSCH 네트워크에서 패킷 큐 활용도 기반 향상된 'Adapting to Traffic' 기법</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">박정배 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">1-3</td><td id="paper_title">공장용 LED를 활용한 Li-Fi 기반 통신 시스템 구현</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김준영 (포항공과대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">1-4</td><td id="paper_title">UAV를 이용한 Wi-Fi 음영 지역 탐지 및 해결 제안 시스템</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김동주 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">1-5</td><td id="paper_title">크롬 확장기능을 사용한 브라우저 기반의 코드 작성기</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">이선호 (부경대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">1-6</td><td id="paper_title">지식그래프 기반 버티포트 리소스 관리 방안에 대한 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px; border-bottom: 1px solid rgb(201, 201, 201);">고동연 (경북대학교)</td></tr>
+        </table>
+      </div>
+      <br/>
+      <div class="session">
+        <p id="title">Session #2 : Recent Advances in Deep Learning</p>
+        <p id="chair_person">좌장 : 김 태 운(부산대학교)</p>
+        <br/>
+        <table>
+          table contents
+          <tr><td id="idx" rowspan="2">2-1</td><td id="paper_title">스마트 팩토리를 위한 PINN</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김재우 (창원대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">2-2</td><td id="paper_title">LSTM과 XGBoost를 이용한 전력 예측에서의 ANN 모델 성능 비교 - 다중 변수 추출 시 데이터분석의 중요성</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김다영, 석혜원, 송득모 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">2-3</td><td id="paper_title">MmWave 레이더 기반 일상 행동 인식을 위한 경량화 딥러닝 시스템의 설계 및 구현</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">신기훈 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">2-4</td><td id="paper_title">NR-V2X Mode2에서 강화 학습 기반 적응형 Modulation Order 선택 기법</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">조의리 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">2-5</td><td id="paper_title">SSD의 쓰기 증폭 개선을 위한 머신러닝 기반 Hot/Cold 페이지 분류 기법</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">윤성준 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">2-6</td><td id="paper_title">WaveTR: 분산 시스템을 위한 메시지 스트림  프레임워크</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px; border-bottom: 1px solid rgb(201, 201, 201);">김민섭, 손자영, 이우령, 홍은솔 (경북대학교)</td></tr>
+        </table>
+      </div>
+      <br/>
+      <div class="session">
+        <p id="title">Session #3 : Applications of Artificial Intelligence</p>
+        <p id="chair_person">좌장 : 박 진 선(부산대학교)</p>
+        <br/>
+        <table>
+          table contents 
+          <tr><td id="idx" rowspan="2">3-1</td><td id="paper_title">차량 주행 상황에서 촬영된 이미지의 분포 정보를 활용한 안개 분류 기법</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">임도현 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">3-2</td><td id="paper_title">더 나은 비전-언어 모델링을 위한 속성-어댑터</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">조용현 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">3-3</td><td id="paper_title">멀티모달 기반 IP 비디오월 제어 시스템</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">윤새봄, 최문석 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">3-4</td><td id="paper_title">Open-Domain News Event Extraction Method Based on  Bert</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">Hairui Huang (아주대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">3-5</td><td id="paper_title">NSGA-II를 활용한 인테리어 상품 최적 조합 추천 프레임워크</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">지다인, 김서윤, 김현민, 이정미, 장진영, 조유담 (서울여자대학교, (주)에이아이닷엠)</td></tr>
+          <tr><td id="idx" rowspan="2">3-6</td><td id="paper_title">엣지컴퓨팅 기반의 영상분석기술을 활용한  응급상황 이벤트 기술개발 </td></tr><tr><td id ="paper_name" style="padding-bottom: 20px; border-bottom: 1px solid rgb(201, 201, 201);">백정훈 (경북대학교)</td></tr>
+        </table>
+      </div> 
+      <br/>
+      <div class="session">
+        <p id="title">포스터</p>
+        <p id="chair_person">좌장 : 유 영 환, 김 태 운, 박 진 선(부산대학교)</p>
+        <br/>
+        <table>
+          <tr><td id="idx" rowspan="2">4-1</td><td id="paper_title">Best Practice를 적용한 Project Management System Package 개발</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김준엽 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-2</td><td id="paper_title">인체 자세 추정을 통한 효율적인 QR 코드 출입증 인식</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">오종현 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-3</td><td id="paper_title">거대 언어 모델의 효율적인 학습 보완을 위한  LangChain 활용 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">곽건영, 손홍석, 심규민, 채정민, 김정근 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-4</td><td id="paper_title">기계학습을 이용한 IoT 기반 재난 시스템 Kubernetes  Custom Autoscaler 설계</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">박준희 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-5</td><td id="paper_title">GPT-4 텍스트 증강 데이터 기반 소규모 챗봇에서 BERT와 Sentence-BERT의 성능 비교</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">은지수 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-6</td><td id="paper_title">대규모 언어 모델을 활용한 강의평가 질의응답 서비스</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">신진철 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-7</td><td id="paper_title">이상행동 감지 시스템</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김승준 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-8</td><td id="paper_title">음성인식 및 감정분석 기술 기반 감정일기 어플리케이션 설계 및 구현</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김태환, 이휘찬, 오동휘, 한의진 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-9</td><td id="paper_title">SentenceBERT와 ChatGPT를 활용한 갱년기 상담 챗봇 서비스 고도화</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">이은주, 서동혁, 이채현, 최혜성, 오유나 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-10</td><td id="paper_title">수상레저기구 위치정보 제공을 위한 프로토콜 정의</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">최연욱 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-11</td><td id="paper_title">반복적 SQL 최적화로 저장 프로시저 속도 향상</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">최윤정 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-12</td><td id="paper_title">쿠버네티스 기반 분산형 교내 IoT 모니터링 시스템</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">이현, 김은지, 장서윤 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-13</td><td id="paper_title">경량화 플랫폼 Jetson TX2를 활용한 YOLOv5 및 DeepSORT 기반 버스 내부 모니터링 시스템 구현</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김민욱, 황정호, 황현정 (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-14</td><td id="paper_title">패치 기반 생성형 모델을 적용한 메타버스 이미지 리타겟팅 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김찬호, 김은지, 김건아, 문채원 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-15</td><td id="paper_title">웹서비스에서 자바스크립트의 보안 강화를 위한 연구 동향 분석</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">이인규 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-16</td><td id="paper_title">인공지능 학습을 위한 데이터 증강 및 전처리 과정에 대한 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">황효성 (경북대학교, (주)퀀텀에이아이)</td></tr>
+          <tr><td id="idx" rowspan="2">4-17</td><td id="paper_title">빅데이터 기반 온라인 이미지 편집 솔루션</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">박준서 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-18</td><td id="paper_title">딥러닝을 활용한 맞춤형 신발 소재별 관리 시스템</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">윤해진 (경북대학교, (주)스마트름뱅이)</td></tr>
+          <tr><td id="idx" rowspan="2">4-19</td><td id="paper_title">차량 내부 공기 질 실시간 분석에 따른 국부공기청정정화 시스템 효율 증대</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">배상우 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-20</td><td id="paper_title">웹 기반 악취방지시설 조합 예측 서비스</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김다진, 박지예, 이아현, 정태훈 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-21</td><td id="paper_title">고회수율 RO 시스템 제어를 위한 인공지능 모델 설계</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">전민재 이상현 배민석 배진성 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-22</td><td id="paper_title">의사-환자 간의 원활하지 못한 의사소통의 해결을 위한 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">엄소민 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-23</td><td id="paper_title">음성인식 및 감정분석 기술 기반 감정일기 어플리케이션 설계 및 구현</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김태환, 오동휘, 이휘찬, 한의진 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-24</td><td id="paper_title">쿠버네티스와 아파치 카프카를 이용한 마이크로서비스 아키텍처 구현에 대한 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">이상희, 김현우, 신성현, 정현정, 조동필 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-25</td><td id="paper_title">데이터 증강 학습 이용한 딥러닝 기반 실시간  전동 킥보드 검지 시스템</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">김도현 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-26</td><td id="paper_title">State-of-the-Art Research Trend on Taxonomy and Impact of Heterogeneity in Federated Learning</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">Tesfahunegn Minwuyelet Mengistu (부산대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-27</td><td id="paper_title">생성형 AI를 활용하는 IT 시스템의 빠른 구현을 위한 레퍼런스 아키텍처 제안과 적용 가능성 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">송혜경, 권다운, 제유나, 하재현 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-28</td><td id="paper_title">긴급신고 상황에 교환기에 종속된 CTI시스템에 대한 향후 확장방향에 대한 연구</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">추현우 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-29</td><td id="paper_title">사용자 위치 및 관심사 기반의 오프라인 번개 모임 앱 고도</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">손석현 (경북대학교)</td></tr>
+          <tr><td id="idx" rowspan="2">4-30</td><td id="paper_title">강철영상의 미세조직 분할을 위한 UNet3+ 개선</td></tr><tr><td id ="paper_name" style="padding-bottom: 20px;">비샬 (금오공과대학)</td></tr>
+        </table>
+      </div>-->
+
+      <!-- <h1>위치</h1>
+      <div class="program_location">
+        <div class="img_container">
+            <img src="sub04_03_08_01_1.jpg" alt="장영실관"> -->
+            <!-- <div class="text_center"><b>국제회의장</b><br/>기계관(303)</div> -->
+        <!-- </div> -->
+        <!-- <div class="img_container">
+          <img src="construction.jpg" alt="건설공학관">
+          <div class="text_center"><b>아카데미아 세미나실</b><br/>건설관(401)</div>
+        </div> -->
+        <!-- <div class="img_container">
+          <img src="sub04_03_05_02_4.jpg" alt="교직원식당"> -->
+          <!-- <div class="text_center"><b>애슐리</b><br/>NC 백화점 6층</div> -->
+        <!-- </div>
+        <div class="text_container"> -->
+          <!-- <div class="text_contents"><b>시청각실, DB130호, DB136호, D229호, D230호</b><br/>장영실관</div> -->
+          <!-- <div class="text_contents"><b>시청각실, D229호</b><br/>장영실관</div>
+        </div> -->
+        <!-- <div class="text_container">
+          <div class="text_contents"><b>아카데미아 세미나실</b><br/>건설관(401)</div>
+        </div> -->
+        <!-- <div class="text_container">
+          <div class="text_contents"><b>교직원식당</b><br/>학생회관 지하 1층</div>
+        </div>
+      </div>
+      <br/>
+      <h1></h1>
+      
+        <img class="wrap_map" src="map.jpg" alt="교직원식당"> -->
+      
+      <!-- <div id="map" style="width:100%;height:100%;margin: 0 auto;"></div>  -->
+      <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc422322f08b3c87c43618c5b637fc83"></script>
+      <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+            mapOption = { 
+                center: new kakao.maps.LatLng(35.231536, 129.081317), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+                // marker: marker
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        
+        // 마커를 표시할 위치와 title 객체 배열입니다 
+        var positions = [
+            {
+                title: '기계관(303) 국제회의장', 
+                latlng: new kakao.maps.LatLng(35.230492, 129.08070)
+            },
+            {
+                title: 'NC 백화점(6층) 애슐리', 
+                latlng: new kakao.maps.LatLng(35.23222, 129.08397)
+            }
+            // {
+            //     title: '근린공원',
+            //     latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+            // }
+        ];
+
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+            
+        for (var i = 0; i < positions.length; i ++) {
+            
+            // 마커 이미지의 이미지 크기 입니다
+            var imageSize = new kakao.maps.Size(24, 35); 
+            
+            // 마커 이미지를 생성합니다    
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+            
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: positions[i].latlng, // 마커를 표시할 위치
+                title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                image : markerImage, // 마커 이미지
+                text: positions[i].title
+            });
+            // var infowindow = new kakao.maps.InfoWindow({
+            //     content : '<div style="width:150px;text-align:center;"><b>' + positions[i].title  + '</b></div>'
+            // });
+            
+            // kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow));
+            // kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+        }
+        // function makeOverListener(map, marker, infowindow){
+        //     return function(){
+        //         infowindow.open(map, marker);
+        //     };
+        // }
+        
+        // function makeOutListener(infowindow){
+        //     return function(){
+        //         infowindow.close();
+        //     };
+        // }
+      </script>
+      </div> -->
+    </main>
+
+    <footer>
+      <div>
+        <p>인제대학교 컴퓨터공학부</p>
+        <div class="flex-row">
+          <span>경남 김해시 인제로 197</span>
+          <span>장영실관</span>
+        </div>
+      </div>
+    </footer>
+  
+
+</body>
