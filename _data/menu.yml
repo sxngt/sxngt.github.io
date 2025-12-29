@@ -1,0 +1,29 @@
+entries:
+  - title: ~/about
+    url: about
+
+  - title: ~/cv
+    url: cv
+
+  - title: ~/projects
+    entries:
+      - title: "souli - llm counseling chatbot"
+        url: https://github.com/sxngt/souli
+      - title: "stsim - quadruped locomotion"
+        url: https://github.com/sxngt/stsim
+      - title: "more on github →"
+        url: https://github.com/sxngt
+
+  - title: ~/blog
+    post_list:
+      limit: 10
+      show_more: true
+      show_more_text: "archive →"
+      show_more_url: archive.html
+
+  - title: ~/links
+    entries:
+      - title: github
+        url: https://github.com/sxngt
+      - title: linkedin
+        url: https://linkedin.com/in/sxngt

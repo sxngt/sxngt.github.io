@@ -1,0 +1,27 @@
+title: sxngt
+author: Sunghyun Kim
+email: # your@email.com
+url: https://sxngt.github.io
+baseurl: ""
+description: >
+  Backend & AI Developer | Robotics PhD Student
+
+permalink: /:title/
+
+favicon: "logo.png"
+
+remote_theme: riggraz/no-style-please
+
+theme_config:
+  appearance: "dark"
+  back_home_text: ".."
+  date_format: "%Y-%m-%d"
+  show_description: false
+  lowercase_titles: true
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
